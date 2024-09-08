@@ -12,7 +12,7 @@
 double calculateDistance();
 double calculatePerimeter();
 double calculateArea();
-double helperDistance(); // this function is located at the end of this program
+double askForUserInput(); // this function is located at the end of this program
 double calculateWidth();
 double calculateHeight();
 
@@ -65,7 +65,7 @@ double calculatePerimeter()
   double diameter, perimeter, difficulty;
 
 // call and initialize the helper function  
-  diameter = helperDistance();
+  diameter = askForUserInput();
 
 // equation for the perimeter of the circle
   perimeter = PI * diameter;
@@ -85,7 +85,7 @@ double calculateArea()
   double  area, diameter, radius, difficulty;
 
 // call and initialize the helper function  
-  diameter = helperDistance();
+  diameter = askForUserInput();
 
 // calculate the radius of the circle using the diameter solved for within the helper function  
   radius = diameter / 2;
@@ -108,7 +108,7 @@ double calculateWidth()
   double width, difficulty;
   
 // call and initialize the helper function  
-  width = helperDistance();
+  width = askForUserInput();
   
   printf("The width of the city encompassed by your request is: %.3lf\n\n", width);
 
@@ -125,7 +125,7 @@ double calculateHeight()
   double height, difficulty; 
 
 // call and initialize the helper function  
-  height = helperDistance();
+  height = askForUserInput();
   
   printf("The height of the city encompassed by your request is: %.3lf\n\n", height);
 
@@ -135,8 +135,8 @@ double calculateHeight()
 }
 
 
-// this helper function is used to calculate the diameter of the circle which will be called within the other functions
-double helperDistance()
+// this helper function is used to calculate the diameter of the circle which will be called within the other functions, and it asks the user for coordinate values
+double askForUserInput()
 {
 // declare the variables
   double x1, x2, y1, y2, dist;
@@ -154,7 +154,7 @@ double helperDistance()
   printf("Enter y-coordinate #2: ");
   scanf("%lf", &y2);
 
-// print their coordinate requests  
+// print their coordinate requests, I know this function shouldn't output anything, but it allows for implication of the DRY method.
   printf("\nPoint #1 entered: x1 = %.1lf; y1 = %.1lf\n", x1, y1);
   printf("Point #2 entered: x2 = %.1lf; y2 = %.1lf\n\n", x2, y2);
 
@@ -163,4 +163,4 @@ double helperDistance()
   return dist;
 }
 
-//double askForUserInput()
+
